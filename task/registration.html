@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>FORM</title>
+    <link rel="stylesheet"  href="reg.css">
+  </head>
+  <body>
+    <div class="main">
+      <h1>REGISTRATION FORM</h1>
+      <form id="register">
+        <label >FIRST NAME:</label>
+        <input type="text" name="fname" id="fname" placeholder="enter your first name">
+        <br>
+        <label >LAST NAME:</label>
+        <input type="text" name="lname" id="lname" placeholder="enter your last name">
+        <br>
+        
+        <label>AGE:</label>
+        <input type="text" name="age" id="age" placeholder="enter your age">
+       <br>
+        <label>EMAIL </label>
+        <input type="text" name="email" id="email" placeholder="enter a valid email address">
+        <br>
+        <label>PHONE NUMBER:</label>
+        <input type="text" name="phone number" id="age" placeholder="enter your phone number">
+        <br>
+        <br>
+        
+        <label>GENDER</label>
+        &nbsp;
+        <input type="radio" name="gender" id="male">
+        &nbsp;
+        <span id="male">MALE</span>
+        &nbsp;&nbsp;&nbsp;
+        <input type="radio" name="gender" id="female">
+        &nbsp;
+        <span id="female">FEMALE</span>
+        &nbsp;&nbsp;&nbsp;
+        <input type="radio" name="gender" id="other">
+        &nbsp;
+        <span id="other">OTHER</span>
+        &nbsp;&nbsp;&nbsp;
+        <br>
+        <br>
+        
+            <label for="inputState">State</label>
+            <select class="form-control" id="inputState">
+                                <option value="SelectState">Select State</option>
+                                <option value="Andra Pradesh">Andra Pradesh</option>
+                                <option value="Karnataka">Karnataka</option>
+                                <option value="Kerala">Kerala</option>
+                                <option value="Delhi">Delhi</option>
+                                <option value="TamilNadu">TamilNadu</option>
+                                
+            </select>
+        &nbsp;
+            
+            <label for="inputDistrict">District</label>
+            <select class="form-control" id="inputDistrict">
+                <option value="">-- select one -- </option>
+            </select>
+      
+        <br>
+        <label>ADDRESS</label>
+        
+        <textarea   rows="2" cols="20"> enter your address  </textarea>
+        <label >DATE OF BIRTH:</label>
+        <input type="date" name="dob" id="dob" placeholder="dd-mm-yyyy">
+        <br>
+        <br>
+        <br
+        
+        <label >USER NAME:</label>
+        <input type="text" name="Uname" id="Uname" placeholder="enter username">
+        <br>
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password"  placeholder="eg:ADFF234xcgh">
+        
+        <br><br>
+        
+        <label for="confirm_password">Confirm Password:</label>
+        <input type="password" id="confirm_password" name="confirm_password" ><br><br>
+        
+        <button id="btn">SUBMIT</button>
+    
+
+     <script>
+        function validateForm() {
+            var password = document.getElementById("password").value;
+            var confirm_password = document.getElementById("confirm_password").value;
+
+            if (password !== confirm_password) {
+                alert("Passwords do not match.");
+                return false;
+            }
+
+            return true;
+        }
+     </script>
+
+
+
+    </form>
+      <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+        
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+        <script>
+        
+        var AndraPradesh = ["Guntur","Kadapa","Krishna","Nellore","Visakhapatnam","Vizianagaram","West Godavari"];
+        var Karnataka = ["Bagalkot","Bangalore Rural","Bangalore Urban","Dakshina Kannada",,"Kolar","Koppal","Mandya","Mysore","Raichur","Ramanagara","Shimoga","Tumkur","Udupi","Uttara Kannada","Yadgir"];
+        var Kerala = ["Alappuzha","Ernakulam","Idukki","Kannur","Kasaragod","Kollam","Kottayam","Kozhikode","Malappuram","Palakkad","Pathanamthitta","Thiruvananthapuram","Thrissur","Wayanad"];
+        var TamilNadu = ["Chennai","Coimbatore","Kanchipuram","Kanyakumari","Madurai","Salem","Sivaganga","Thanjavur","Theni","Tiruvannamalai","Tiruvarur"];
+       
+        var Delhi = ["Central Delhi","East Delhi","New Delhi","North Delhi","North East Delhi","North West Delhi","Shahdara","South Delhi","South East Delhi","South West Delhi","West Delhi"];
+        
+        $("#inputState").change(function(){
+          var StateSelected = $(this).val();
+          var optionsList;
+          var htmlString = "";
+        
+          switch (StateSelected) {
+            case "Andra Pradesh":
+                optionsList = AndraPradesh;
+                break;
+            
+            case  "Karnataka":
+                optionsList = Karnataka;
+                break;
+            case "Kerala":
+                optionsList = Kerala;
+                break;
+            
+            case  "Tamil Nadu":
+                optionsList = TamilNadu;
+                break;
+           
+            case  "Delhi":
+                optionsList = Delhi;
+                break;
+            
+        }
+        
+        
+          for(var i = 0; i < optionsList.length; i++){
+            htmlString = htmlString+"<option value='"+ optionsList[i] +"'>"+ optionsList[i] +"</option>";
+          }
+          $("#inputDistrict").html(htmlString);
+        
+        });
+        
+
+      
+      </script>
+     
+
+    </div>
+  </body>
+</html>
